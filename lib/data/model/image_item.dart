@@ -1,4 +1,9 @@
-class ImageItem{
+import 'package:json_annotation/json_annotation.dart';
+
+part 'image_item.g.dart';
+
+@JsonSerializable()
+class ImageItem {
   String imageUrl;
   String tags;
 
@@ -34,18 +39,12 @@ class ImageItem{
     );
   }
 
-  Map<String, dynamic> toMap() {
-    return {
-      'imageUrl': imageUrl,
-      'tags': tags,
-    };
+  Map<String, dynamic> toJson() {
+    return _$ImageItemToJson(this);
   }
 
-  factory ImageItem.fromMap(Map<String, dynamic> map) {
-    return ImageItem(
-      imageUrl: map['imageUrl'] as String,
-      tags: map['tags'] as String,
-    );
+  factory ImageItem.fromJson(Map<String, dynamic> json) {
+    return _$ImageItemFromJson(json);
   }
 
 //</editor-fold>
