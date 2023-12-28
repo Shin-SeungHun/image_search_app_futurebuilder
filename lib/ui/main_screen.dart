@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -10,6 +11,38 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Column(
+        children: [
+          TextField(
+            decoration: InputDecoration(
+              labelText: '검색',
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                borderSide: const BorderSide(
+                  width: 2,
+                  color: Colors.green,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                borderSide: BorderSide(
+                  width: 2,
+                  color: Colors.green,
+                ),
+              ),
+              suffixIcon: IconButton(
+                icon: Icon(
+                  Icons.search,
+                  color: Colors.cyan,
+                ),
+                onPressed: () {},
+              ),
+            ),
+          ),
+          SizedBox(height: 24),
+        ],
+      ),
+    );
   }
 }
