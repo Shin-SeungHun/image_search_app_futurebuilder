@@ -28,6 +28,9 @@ class _MainScreenState extends State<MainScreen> {
           child: Column(
             children: [
               TextField(
+                onChanged: (query) {
+                  setState(() {});
+                },
                 controller: searchTextEditingController,
                 decoration: InputDecoration(
                   labelText: '검색',
